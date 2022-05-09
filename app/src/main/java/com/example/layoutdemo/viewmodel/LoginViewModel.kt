@@ -1,46 +1,50 @@
 package com.example.layoutdemo.viewmodel
 
+import android.app.Application
+import android.content.Intent
 import android.util.Patterns
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.widget.Toast
+import androidx.databinding.ObservableField
+import com.example.layoutdemo.base.BaseViewModel
+import com.example.layoutdemo.view.DashboardActivity
 
-class LoginViewModel : ViewModel() {
-    var flag: Boolean = false
+class LoginViewModel(application: Application) : BaseViewModel(application) {
+    private val mContext = application
+   // var email: ObservableField<String>? = null
+   // var password: ObservableField<String>? = null
 
-    /*var emailAddress = MutableLiveData<String>()
-    var emailAddress: ObservableField<String>? = null
-    var password = MutableLiveData<String>()*/
-
-    var email: String = ""
-    var password: String = ""
-
-    private val logInResult = MutableLiveData<String>()
-
-    fun getLogInResult(): LiveData<String> = logInResult
+    var email :ObservableField<String> = ObservableField("")
+    var password :ObservableField<String> = ObservableField("")
 
     private fun emailValidation(): Boolean {
-        if (email.isBlank()) {
-            logInResult.value = "Enter your Email ID"
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            logInResult.value = "Enter a valid Email ID"
+        if (email.get().toString().isBlank()) {
+            Toast.makeText(mContext, "Enter your Email ID", Toast.LENGTH_SHORT).show()
+            return false
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email.get().toString()).matches()) {
+            Toast.makeText(mContext, "Enter a valid Email ID", Toast.LENGTH_SHORT).show()
+            return false
+        } else {
+            return true
         }
-        return true
     }
 
     private fun passwordValidation(): Boolean {
-        if (password.isBlank()) {
-            logInResult.value = "Enter your Password"
-        } else if (password < 8.toString()) {
-            logInResult.value = "Password must be of 8 character"
+        if (password.get().toString().isBlank()) {
+            Toast.makeText(mContext, "Enter your password", Toast.LENGTH_SHORT).show()
+            return false
+        } else if (password.get().toString().length < 8) {
+            Toast.makeText(mContext, "Password must be of 8 character", Toast.LENGTH_SHORT).show()
+            return false
+        } else {
+            return true
         }
-        return true
     }
 
-    fun performValidation(): Boolean {
-        if (!emailValidation() && !passwordValidation()) {
-            return false
+    fun loginButton() {
+        if (emailValidation() && passwordValidation()) {
+            Toast.makeText(mContext, "Login Success", Toast.LENGTH_SHORT).show()
+            mContext.startActivity(Intent(mContext, DashboardActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
-        return true
     }
+
 }
