@@ -3,16 +3,36 @@ package com.example.layoutdemo.base
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.layoutdemo.R
-import com.example.layoutdemo.databinding.ActivityBaseBinding
+import androidx.databinding.ViewDataBinding
 
-open class BaseActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityBaseBinding
+abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatActivity() {
+
+    private var mViewDataBinding: T? = null
+    private var mViewModel: V? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_base)
-
-
+        performDataBinding()
     }
+
+    fun getViewDataBinding(): T {
+        return mViewDataBinding!!
+    }
+
+    private fun performDataBinding() {
+        mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId())
+        mViewModel = when (this.mViewModel) {
+            null -> getViewModel()
+            else -> mViewModel
+        }
+        mViewDataBinding!!.setVariable(getBindingVariable(), mViewModel)
+        mViewDataBinding!!.executePendingBindings()
+        mViewDataBinding!!.lifecycleOwner = this
+    }
+
+    abstract fun getBindingVariable(): Int
+
+    abstract fun getViewModel(): V
+
+    abstract fun getLayoutId(): Int
 }

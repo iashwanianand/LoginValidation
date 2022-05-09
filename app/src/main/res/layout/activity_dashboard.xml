@@ -5,12 +5,42 @@
 
     <data>
 
+        <variable
+            name="dashboardViewModel"
+            type="com.example.layoutdemo.viewmodel.DashboardViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.DashboardActivity">
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/welcome_dashboard"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="25dp"
+            android:backgroundTint="@color/yellow"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:cornerRadius="25dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

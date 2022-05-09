@@ -18,23 +18,23 @@ class SignupActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_signup)
         viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
 
-        binding.tvLogin.setOnClickListener {
+       /* binding.tvLogin.setOnClickListener {
             intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
-        }
+        }*/
 
-        binding.backArrow.setOnClickListener {
+       /* binding.backArrow.setOnClickListener {
             intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
-        }
+        }*/
 
     }
 
     override fun onBackPressed() {
-        intent = Intent(this, LoginActivity::class.java)
+       /* intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
-        finish()
+        finish()*/
     }
 }

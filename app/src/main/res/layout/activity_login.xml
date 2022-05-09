@@ -5,15 +5,14 @@
 
     <data>
         <variable
-            name="viewModel"
+            name="loginViewModel"
             type="com.example.layoutdemo.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.LoginActivity"
-        android:background="@drawable/login_background">
+        tools:context=".view.LoginActivity">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_login"
@@ -57,7 +56,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
-                android:text="@={viewModel.email}"
+                android:text="@={loginViewModel.email}"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:textCursorDrawable="@color/black" />
@@ -83,7 +82,7 @@
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={viewModel.password}"
+                android:text="@={loginViewModel.password}"
                 android:inputType="textPassword"
                 android:textCursorDrawable="@color/black" />
 
@@ -94,13 +93,13 @@
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="280dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="44dp"
             android:backgroundTint="@color/yellow"
+            android:onClick="@{()->loginViewModel.loginButton()}"
             android:text="@string/login"
-            android:onClick="@{()->viewModel.performValidation()}"
-            android:textColor="@color/white"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textSize="19sp"
             android:textStyle="bold"
             app:cornerRadius="25dp"
@@ -132,5 +131,4 @@
             android:textStyle="bold" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
