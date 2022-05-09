@@ -2,10 +2,10 @@ package com.example.layoutdemo.application
 
 import android.app.Application
 
-class Apps: Application() {
+class App: Application() {
 
     companion object {
-        lateinit var instance : Apps
+        lateinit var instance : App
         private set
     }
 

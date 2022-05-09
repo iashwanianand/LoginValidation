@@ -4,9 +4,11 @@ import android.app.Application
 import android.content.Intent
 import android.util.Patterns
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.ObservableField
 import com.example.layoutdemo.base.BaseViewModel
 import com.example.layoutdemo.view.DashboardActivity
+import com.example.layoutdemo.view.SignupActivity
 
 class LoginViewModel(application: Application) : BaseViewModel(application) {
     private val mContext = application
@@ -45,6 +47,11 @@ class LoginViewModel(application: Application) : BaseViewModel(application) {
             Toast.makeText(mContext, "Login Success", Toast.LENGTH_SHORT).show()
             mContext.startActivity(Intent(mContext, DashboardActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
+    }
+
+    fun signupButton() {
+        val intent = Intent(mContext, SignupActivity::class.java)
+        mContext.startActivity(Intent(mContext, SignupActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
     }
 
 }

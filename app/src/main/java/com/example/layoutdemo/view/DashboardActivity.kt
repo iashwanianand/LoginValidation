@@ -16,6 +16,8 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        mViewBinding = getViewDataBinding()
+        mViewBinding.dashboardViewModel = mDashboardViewModel
 
     }
 

@@ -35,4 +35,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
     override fun getLayoutId(): Int {
         return R.layout.activity_login
     }
+
+    override fun onBackPressed() {
+        TODO()
+    }
 }

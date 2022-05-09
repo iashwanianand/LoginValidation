@@ -6,9 +6,11 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
+import com.example.layoutdemo.base.BaseViewModel
 import com.example.layoutdemo.view.LoginActivity
+import com.example.layoutdemo.view.SignupActivity
 
-class SignUpViewModel(application: Application): AndroidViewModel(application) {
+class SignUpViewModel(application: Application): BaseViewModel(application) {
     var mContext = application
 
     var fullName :ObservableField<String> = ObservableField("")
@@ -60,5 +62,9 @@ class SignUpViewModel(application: Application): AndroidViewModel(application) {
             mContext.startActivity(intent)
 
         }
+    }
+    fun loginButton() {
+        val intent = Intent(mContext, SignupActivity::class.java)
+        mContext.startActivity(Intent(mContext, LoginActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
     }
 }
