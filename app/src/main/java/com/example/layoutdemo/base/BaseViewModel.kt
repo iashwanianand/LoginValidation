@@ -3,6 +3,4 @@ package com.example.layoutdemo.base
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 
-open class BaseViewModel(application: Application): AndroidViewModel(application)  {
-
-}
+open class BaseViewModel(application: Application): AndroidViewModel(application)

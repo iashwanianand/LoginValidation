@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="loginViewModel"
             type="com.example.layoutdemo.viewmodel.LoginViewModel" />
@@ -56,9 +57,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
-                android:text="@={loginViewModel.email}"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
+                android:text="@={loginViewModel.email}"
                 android:textCursorDrawable="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -82,8 +83,8 @@
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={loginViewModel.password}"
                 android:inputType="textPassword"
+                android:text="@={loginViewModel.password}"
                 android:textCursorDrawable="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -110,26 +111,26 @@
             android:id="@+id/tv_do_not_have_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
             android:layout_marginBottom="25dp"
             android:text="@string/do_not_have_an_account"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginStart="80dp" />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@+id/tv_do_not_have_account"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="25dp"
             android:layout_marginStart="5dp"
+            android:layout_marginBottom="25dp"
             android:onClick="@{()-> loginViewModel.signupButton()}"
             android:text="@string/sign_up"
-            android:textSize="18sp"
             android:textColor="@color/yellow"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_do_not_have_account" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

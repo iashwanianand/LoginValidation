@@ -32,15 +32,16 @@
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
-            app:layout_constraintRight_toRightOf="parent"
             android:layout_margin="25dp"
             android:backgroundTint="@color/yellow"
+            android:onClick="@{() -> dashboardViewModel.logoutButton()}"
             android:text="@string/logout"
             android:textAllCaps="false"
             android:textSize="19sp"
             android:textStyle="bold"
-            app:cornerRadius="25dp" />
+            app:cornerRadius="25dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
