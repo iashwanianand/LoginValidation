@@ -12,7 +12,8 @@ import com.example.loginvalidation.roomdb.PersonRepository
 import com.example.loginvalidation.view.LoginActivity
 import kotlinx.coroutines.launch
 
-class SignUpViewModel(application: Application) : BaseViewModel(application) {
+class SignUpViewModel(application: Application, private val personRepository: PersonRepository) :
+    BaseViewModel(application) {
     private val mContext = application
 
     var fullName: ObservableField<String> = ObservableField("")
@@ -57,9 +58,20 @@ class SignUpViewModel(application: Application) : BaseViewModel(application) {
         return false
     }
 
+    // Login button Function
+    fun loginButton() {
+        mContext.startActivity(
+            Intent(
+                mContext,
+                LoginActivity::class.java
+            ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_NO_HISTORY)
+        )
+    }
+
     // Signup button function
     fun signupButton() {
         if (fullNameValidation() && emailValidation() && passwordValidation()) {
+            savePerson()
             mContext.startActivity(
                 Intent(
                     mContext,
@@ -73,13 +85,20 @@ class SignUpViewModel(application: Application) : BaseViewModel(application) {
         }
     }
 
-    // Login button Function
-    fun loginButton() {
-        mContext.startActivity(
-            Intent(
-                mContext,
-                LoginActivity::class.java
-            ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_NO_HISTORY)
-        )
+    // Save Data into Database
+    private fun savePerson() {
+        val fullName = fullName.get()!!
+        val email = email.get()!!
+        val password = password.get()!!
+
+        insert(Person(0, fullName, email, password))
+
+    }
+
+    // Insert Function for savePerson() method
+    private fun insert(person: Person) {
+        viewModelScope.launch {
+            personRepository.insert(person)
+        }
     }
 }
