@@ -1,4 +1,4 @@
-package com.example.layoutdemo.application
+package com.example.loginvalidation.application
 
 import android.app.Application
 

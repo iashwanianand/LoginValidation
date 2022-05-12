@@ -7,7 +7,7 @@
 
         <variable
             name="dashboardViewModel"
-            type="com.example.layoutdemo.viewmodel.DashboardViewModel" />
+            type="com.example.loginvalidation.viewmodel.DashboardViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

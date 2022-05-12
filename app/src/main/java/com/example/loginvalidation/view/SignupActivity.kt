@@ -1,13 +1,15 @@
-package com.example.layoutdemo.view
+package com.example.loginvalidation.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.example.layoutdemo.BR
-import com.example.layoutdemo.R
-import com.example.layoutdemo.base.BaseActivity
-import com.example.layoutdemo.databinding.ActivitySignupBinding
-import com.example.layoutdemo.viewmodel.SignUpViewModel
+import com.example.loginvalidation.BR
+import com.example.loginvalidation.R
+import com.example.loginvalidation.base.BaseActivity
+import com.example.loginvalidation.databinding.ActivitySignupBinding
+import com.example.loginvalidation.roomdb.PersonDatabase
+import com.example.loginvalidation.roomdb.PersonRepository
+import com.example.loginvalidation.viewmodel.SignUpViewModel
 
 class SignupActivity : BaseActivity<ActivitySignupBinding, SignUpViewModel>() {
 

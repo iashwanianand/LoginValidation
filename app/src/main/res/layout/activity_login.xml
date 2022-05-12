@@ -7,7 +7,7 @@
 
         <variable
             name="loginViewModel"
-            type="com.example.layoutdemo.viewmodel.LoginViewModel" />
+            type="com.example.loginvalidation.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -97,7 +97,7 @@
             android:layout_marginLeft="280dp"
             android:layout_marginTop="44dp"
             android:backgroundTint="@color/yellow"
-            android:onClick="@{()->loginViewModel.loginButton()}"
+            android:onClick="@{() -> loginViewModel.loginButton()}"
             android:text="@string/login"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginBottom="25dp"
-            android:onClick="@{()-> loginViewModel.signupButton()}"
+            android:onClick="@{() -> loginViewModel.signupButton()}"
             android:text="@string/sign_up"
             android:textColor="@color/yellow"
             android:textSize="18sp"

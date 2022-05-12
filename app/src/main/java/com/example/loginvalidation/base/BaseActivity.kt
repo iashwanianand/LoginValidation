@@ -1,4 +1,4 @@
-package com.example.layoutdemo.base
+package com.example.loginvalidation.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

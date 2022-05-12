@@ -1,4 +1,4 @@
-package com.example.layoutdemo
+package com.example.loginvalidation
 
 import org.junit.Test
 

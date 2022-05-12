@@ -1,15 +1,15 @@
-package com.example.layoutdemo.view
+package com.example.loginvalidation.view
 
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.example.layoutdemo.BR
-import com.example.layoutdemo.R
-import com.example.layoutdemo.base.BaseActivity
-import com.example.layoutdemo.databinding.ActivityLoginBinding
-import com.example.layoutdemo.viewmodel.LoginViewModel
+import com.example.loginvalidation.BR
+import com.example.loginvalidation.R
+import com.example.loginvalidation.base.BaseActivity
+import com.example.loginvalidation.databinding.ActivityLoginBinding
+import com.example.loginvalidation.viewmodel.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
     private lateinit var mViewBinding: ActivityLoginBinding

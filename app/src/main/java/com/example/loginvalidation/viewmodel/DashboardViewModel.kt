@@ -1,16 +1,16 @@
-package com.example.layoutdemo.viewmodel
+package com.example.loginvalidation.viewmodel
 
 import android.app.Application
 import android.content.Intent
 import android.widget.Toast
-import com.example.layoutdemo.base.BaseViewModel
-import com.example.layoutdemo.view.LoginActivity
+import com.example.loginvalidation.base.BaseViewModel
+import com.example.loginvalidation.view.LoginActivity
 
 class DashboardViewModel(application: Application) : BaseViewModel(application) {
     private val mContext = application
 
     fun logoutButton() {
-        Toast.makeText(mContext, "Successfully Logged out", Toast.LENGTH_SHORT).show()
+        Toast.makeText(mContext, "Logout Successfully", Toast.LENGTH_SHORT).show()
         mContext.startActivity(
             Intent(
                 mContext,

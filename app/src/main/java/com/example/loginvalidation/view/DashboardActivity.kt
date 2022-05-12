@@ -1,13 +1,13 @@
-package com.example.layoutdemo.view
+package com.example.loginvalidation.view
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.example.layoutdemo.BR
-import com.example.layoutdemo.R
-import com.example.layoutdemo.base.BaseActivity
-import com.example.layoutdemo.databinding.ActivityDashboardBinding
-import com.example.layoutdemo.viewmodel.DashboardViewModel
+import com.example.loginvalidation.BR
+import com.example.loginvalidation.R
+import com.example.loginvalidation.base.BaseActivity
+import com.example.loginvalidation.databinding.ActivityDashboardBinding
+import com.example.loginvalidation.viewmodel.DashboardViewModel
 
 class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewModel>() {
     private lateinit var mViewBinding: ActivityDashboardBinding
