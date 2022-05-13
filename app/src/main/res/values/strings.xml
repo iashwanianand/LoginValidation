@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LayoutDemo</string>
+    <string name="app_name">LoginValidation</string>
     <string name="please_wait">Please wait…</string>
     <string name="login">Login</string>
     <string name="create_account">Create Account</string>
@@ -13,6 +13,13 @@
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="welcome_dashboard">Welcome to Dashboard</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
     <string name="logout">Logout</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="profile_title">Profile Title</string>
+    <string name="popularity">Popularity</string>
+    <string name="like">Like</string>
+    <string name="followers">Followers</string>
 
 </resources>

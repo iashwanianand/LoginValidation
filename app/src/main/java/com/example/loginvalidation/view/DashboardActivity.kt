@@ -1,6 +1,8 @@
 package com.example.loginvalidation.view
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.loginvalidation.BR
@@ -34,6 +36,12 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
 
     override fun getLayoutId(): Int {
         return R.layout.activity_dashboard
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.dashboard_menu, menu)
+        return true
     }
 
     override fun onBackPressed() {

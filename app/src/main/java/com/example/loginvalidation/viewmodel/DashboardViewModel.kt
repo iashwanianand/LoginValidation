@@ -9,6 +9,7 @@ import com.example.loginvalidation.view.LoginActivity
 class DashboardViewModel(application: Application) : BaseViewModel(application) {
     private val mContext = application
 
+    // Logout function to logout
     fun logoutButton() {
         Toast.makeText(mContext, "Logout Successfully", Toast.LENGTH_SHORT).show()
         mContext.startActivity(

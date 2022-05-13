@@ -7,8 +7,6 @@ import com.example.loginvalidation.BR
 import com.example.loginvalidation.R
 import com.example.loginvalidation.base.BaseActivity
 import com.example.loginvalidation.databinding.ActivitySignupBinding
-import com.example.loginvalidation.roomdb.PersonDatabase
-import com.example.loginvalidation.roomdb.PersonRepository
 import com.example.loginvalidation.viewmodel.SignUpViewModel
 
 class SignupActivity : BaseActivity<ActivitySignupBinding, SignUpViewModel>() {

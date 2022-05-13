@@ -12,8 +12,8 @@ import com.example.loginvalidation.roomdb.PersonRepository
 import com.example.loginvalidation.view.LoginActivity
 import kotlinx.coroutines.launch
 
-class SignUpViewModel(application: Application, private val personRepository: PersonRepository) :
-    BaseViewModel(application) {
+class SignUpViewModel(application: Application) : BaseViewModel(application) {
+    private var personRepository: PersonRepository? = null
     private val mContext = application
 
     var fullName: ObservableField<String> = ObservableField("")
@@ -98,7 +98,7 @@ class SignUpViewModel(application: Application, private val personRepository: Pe
     // Insert Function for savePerson() method
     private fun insert(person: Person) {
         viewModelScope.launch {
-            personRepository.insert(person)
+            personRepository?.insert(person)
         }
     }
 }
